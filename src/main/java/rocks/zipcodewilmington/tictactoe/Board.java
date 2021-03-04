@@ -12,11 +12,10 @@ public class Board {
 
     public Boolean isInFavorOfX() {
         boolean xWon = false;
-        for(int i=0;i< matrix.length;i++){
-            if(checkColumn('X',i)){
+            if(checkColumn('X')){
                 xWon = true;
             }
-            else if(checkRow('X',i)){
+            else if(checkRow('X')){
                 xWon = true;
             }
             else if(checkDiag('X')){
@@ -25,17 +24,15 @@ public class Board {
             else{
                 xWon = false;
             }
-        }
         return xWon;
     }
 
     public Boolean isInFavorOfO() {
         boolean oWon = false;
-        for(int i=0;i< matrix.length;i++){
-            if(checkColumn('O',i)){
+            if(checkColumn('O')){
                 oWon = true;
             }
-            else if(checkRow('O',i)){
+            else if(checkRow('O')){
                 oWon = true;
             }
             else if(checkDiag('O')){
@@ -44,7 +41,6 @@ public class Board {
             else{
                 oWon = false;
             }
-        }
         return oWon;
 
     }
@@ -70,32 +66,35 @@ public class Board {
         }
     }
 
-    public boolean checkColumn(char playerXY,int column){
+    public boolean checkColumn(char playerXY) {
         int count = 0;
-        for(int i=0;i<matrix.length;i++){
-            if(matrix[i][column].equals(playerXY)){
-                count++;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (matrix[i][j] == playerXY) {
+                    count++;
+                }
             }
         }
-        if(count==3){
+        if (count == 3) {
             return true;
-        }
-        else{
+        } else {
             return false;
         }
     }
 
-    public boolean checkRow(char playerXY,int row){
+
+    public boolean checkRow(char playerXY){
         int count = 0;
-        for(int i=0;i<matrix.length;i++){
-            if(matrix[row][i].equals(playerXY)){
-                count++;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (matrix[i][j] == playerXY) {
+                    count++;
+                }
             }
         }
-        if(count==3){
+        if (count == 3) {
             return true;
-        }
-        else{
+        } else {
             return false;
         }
     }
