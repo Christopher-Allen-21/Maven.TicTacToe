@@ -16,7 +16,7 @@ public class PlayerWinsColumn1Test {
         // Given
         this.board = new Board(new Character[][]{
                 {'X', 'O', ' '},
-                {'X', ' ', ' '},
+                {'X', 'X', 'O'},
                 {'X', 'O', ' '}
         });
     }
